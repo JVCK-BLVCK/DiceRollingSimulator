@@ -1,0 +1,29 @@
+# Dice Rolling Simulator
+
+import random
+
+# Initialize the count for each face
+face_counts = [0, 0, 0, 0, 0, 0]
+
+print("Welcome to the Dice Rolling Simulator!")
+
+# Prompt the user for the number of rolls
+num_rolls = int(input("How many times do you want to roll the dice? "))
+
+# Roll the dice and update the count for each face
+rolls = 0
+while rolls < num_rolls:
+    # Roll the dice and get a random face (number between 1 and 6)
+    face = random.randint(1, 6)
+    
+    # Update the count for the corresponding face
+    face_counts[face - 1] += 1
+    
+    # Increment the number of rolls
+    rolls += 1
+
+# Display the results
+print("\nResults:")
+for face in range(1, 7):
+    count = face_counts[face - 1]
+    print(f"Face {face} appeared {count} time(s).")
